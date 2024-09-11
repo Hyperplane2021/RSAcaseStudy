@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Code Table</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <section id="Question_HumanEval/144" style="text-align: center;">
+        <h2>Question_HumanEval/144</h2>
+        <pre style="font-family: monospace; background-color: #f4f4f4; padding: 20px; border-radius: 10px; color: black; font-size: 18px; display: inline-block; text-align: left; max-width: 80%; line-height: 1.5;">
+def simplify(x, n):
+    """Your task is to implement a function that will simplify the expression
+    x * n. The function returns True if x * n evaluates to a whole number and False
+    otherwise. Both x and n, are string representation of a fraction, and have the following format,
+    &lt;numerator&gt;/&lt;denominator&gt; where both numerator and denominator are positive whole numbers.
+
+    You can assume that x, and n are valid fractions, and do not have zero as denominator.
+
+    simplify("1/5", "5/1") = True
+    simplify("1/6", "2/1") = False
+    simplify("7/10", "10/2") = False
+    """
+        </pre>
+    </section>
+    <!-- 折线图容器 -->
+    <div id="chartContainer">
+        <canvas id="probChart"></canvas>
+    </div>
+    <!-- 表格展示 -->
+    <table id="programTable">
+        <thead>
+            <tr>
+                <th>Function ID</th>
+                <th>Pass Rate (%)</th>
+                <th>Coder Score</th>
+                <th>Reviewer Score</th>
+                <th>Coder Reviewer Score</th>
+                <th>Original RSA Score</th>
+                <th>Log RSA Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 第一行 -->
+            <tr data-code="def simplify(x, n):&#10;    # Parse the fractions from the strings&#10;    x_num, x_den = map(int, x.split('/'))&#10;    n_num, n_den = map(int, n.split('/'))&#10;&#10;    # Check if the product is a whole number&#10;    product = x_num * n_num / (x_den * n_den)&#10;    return product.is_integer()" data-description="Create a function that takes two fractions as strings, represented as a numerator and a denominator separated by a forward slash. Then, it checks if the product of `x_num` and `n_num` divided by the product of `x_den` and `n_den` is a whole number. If the result is an integer, the function returns `True`, otherwise it returns `False`."  prob = '[-17.61694279725998, -63.432210422939534, -65.3335456447021, -65.19336485776148, -48.60662488348407, -58.064573828480206, -59.73631022134941, -46.03127774042014, -41.462644735227514, -78.97983968439439, -82.81362520685434]'>
+                <td>function_1 (s02)</td>
+                <td>100.0</td>
+                <td>-28.09417548975977</td>
+                <td>-257.2182635322239</td>
+                <td>-285.31243902198366</td>
+                <td>0.9999999999554585</td>
+                <td>-0.028085060396575007</td>
+            </tr>
+            <!-- 第二行 -->
+            <tr data-code="def simplify(x, n):&#10;    x_num, x_den = x.split('/')&#10;    n_num, n_den = n.split('/')&#10;&#10;    # Check if the denominators are the same&#10;    if x_den != n_den:&#10;        return False&#10;&#10;    # Check if the numerators are divisible by the common denominator&#10;    if (int(x_num) % int(x_den)) == 0 and (int(n_num) % int(x_den)) == 0:&#10;        return True&#10;&#10;    return False" data-description="This function takes two numbers in the form of a fraction (a/b) and checks if one of the numbers is equal to the simplified form of the other number. The function first splits the input numbers into their numerator and denominator parts using the split() method. Then it checks if the denominators are the same, if not it returns false. If the denominators are the same, it checks if the numerators are divisible by the common denominator without a remainder, if so it returns true, otherwise it returns false. This function is useful for simplifying fractions by canceling out common factors." prob = '[-38.8635003468994, -76.71870516373747, -48.2178672375976, -69.62346692665642, -74.54014040365291, -62.953178478144764, -64.76323974016714, -45.606031638722015, -63.81469303565427, -71.22976020563328, -79.1224565944558]'           >
+                <td>function_2 (s26)</td>
+                <td>46.15</td>
+                <td>-52.12662125152624</td>
+                <td>-267.6891522483196</td>
+                <td>-319.8157734998458</td>
+                <td>0.9987353574951723</td>
+                <td>-0.05588227834862653</td>
+            </tr>
+            <!-- 第三行 -->
+            <tr data-code="def simplify(x, n):&#10;    x_num, x_den = x.split('/')&#10;    n_num, n_den = n.split('/')&#10;&#10;    if x_den == n_den:&#10;        return int(x_num) * int(n_num) == int(x_den) * int(n_den)&#10;    else:&#10;        return False"data-description="Create a function that takes two fractions in the form of a string, where the numerator and denominator are separated by a forward slash. Returns true if the numerator of the first fraction is equal to the product of the denominator of the first fraction and the numerator of the second fraction, or if the numerator of the second fraction is equal to the product of the denominator of the first fraction and the numerator of the second fraction. Returns false in any other cases." prob = '[-18.973910982327652, -69.83312574618321, -59.47371662832302, -57.387722244322504, -59.319591070387105, -47.48464833235266, -63.59302795557596, -35.69735840232261, -52.38432978853962, -60.618521929881354, -72.25058494723635]'           >
+                <td>function_3 (s17)</td>
+                <td>53.85</td>
+                <td>-27.65107729593158</td>
+                <td>-262.90730971447124</td>
+                <td>-290.55838701040284</td>
+                <td>0.9999999454113482</td>
+                <td>-0.03178121504810842</td>
+            </tr>
+            <!-- 第四行 -->
+            <tr data-code="def simplify(x, n):&#10;    x_num, x_den = x.split('/')&#10;    n_num, n_den = n.split('/')&#10;&#10;    # Check if x and n are valid fractions&#10;    if x_den == '' or n_den == '':&#10;        return False&#10;&#10;    # Check if x * n evaluates to a whole number&#10;    product = int(x_num) * int(n_den)&#10;    return product % int(x_den) == 0 and product % int(n_den) == 0" data-description="This function takes two numbers in the form of a fraction (a/b) and simplifies them by checking if the product of the numerators divided by the product of the denominators results in an integer. If the result is an integer, the function returns true, otherwise it returns false." prob = '[-30.85865334898517, -72.45002377106357, -63.47852939848781, -76.23510128934322, -60.30386284919655, -64.61223324183902, -62.9545309554278, -43.90348482250579, -47.80297537959814, -78.71911414003262, -87.79640856504011]'>
+                <td>function_4 (s21)</td>
+                <td>69.23</td>
+                <td>-44.3168936319073</td>
+                <td>-271.8805325020363</td>
+                <td>-316.1974261339436</td>
+                <td>0.999997795001475</td>
+                <td>-0.04478012673013174</td>
+            </tr>
+            <!-- 第五行 -->
+            <tr data-code="def simplify(x, n):&#10;    x_num, x_den = x.split('/')&#10;    n_num, n_den = n.split('/')&#10;&#10;    if x_den == n_den:&#10;        return int(x_num) * int(n_num) == int(x_den) * int(n_num)&#10;    else:&#10;        return False" data-description="Create a function that takes two fractions. It returns True if the denominators of both fractions are the same and the product of the first fraction's numerator and the second fraction's numerator equals the product of the first fraction's denominator and the second fraction's denominator. Otherwise, it returns False."  prob = '[-19.135018638291513, -73.13655212121375, -57.88963297643204, -58.09207023487761, -62.32113646774815, -45.39650830399842, -65.64741017059714, -38.08843037953284, -56.49189463779476, -65.03297245926206, -73.82244986540172]' >
+                <td>function_5 (s27)</td>
+                <td>38.46</td>
+                <td>-27.39652563797879</td>
+                <td>-261.28597072005437</td>
+                <td>-288.6824963580332</td>
+                <td>0.9999999941260698</td>
+                <td>-0.031111115879107695</td>
+            </tr>
+            <!-- 第六行 -->
+            <tr data-code="def simplify(x, n):&#10;    x_num, x_den = map(int, x.split('/'))&#10;    n_num, n_den = map(int, n.split('/'))&#10;&#10;    # Check if x and n are both integers&#10;    if x_num == 0 or n_den == 0:&#10;        return False&#10;&#10;    # Simplify the fraction&#10;    x_num /= gcd(x_num, x_den)&#10;    n_num /= gcd(n_num, n_den)&#10;&#10;    # Check if the result is a whole number&#10;    return x_num * n_den == n_num * x_den"data-description="Create a function that takes two fractions as strings. Returns true if one of the fractions can be simplified by dividing both the numerator and denominator by the greatest common divisor of the two numbers. Returns false in any other cases."   prob = '[-31.395777802834345, -66.83045494270164, -60.79672580269062, -63.83725161877419, -60.54270094347976, -67.56012273828856, -61.123478145489116, -55.928610135137205, -51.77598907303127, -73.20220282955597, -82.27528511420587]'         >
+                <td>function_6 (s25)</td>
+                <td>0.0</td>
+                <td>-46.07728115593111</td>
+                <td>-268.70414681080683</td>
+                <td>-314.78142796673797</td>
+                <td>0.9999999985680749</td>
+                <td>-0.04649376239696508</td>
+            </tr>
+            <!-- 第七行 -->
+            <tr data-code="import re&#10;&#10;def simplify(x, n):&#10;    # Use regular expressions to extract numerator and denominator from x and n&#10;    x_num = re.sub(r'^.*?/', '', x)&#10;    x_den = re.sub(r'^.*?/', '', x)&#10;    n_num = re.sub(r'^.*?/', '', n)&#10;    n_den = re.sub(r'^.*?/', '', n)&#10;&#10;    # Check if x and n have the same denominator&#10;    if x_den == n_den:&#10;        # If they do, simplify the expression by multiplying the numerators and dividing by the denominator&#10;        simplified = x_num * n_num // x_den&#10;&#10;        # Check if the result is a whole number&#10;        if simplified.is_integer():&#10;            return True&#10;    return False" data-description="This function takes two numbers, x and n, and checks if x can be simplified by dividing it by n. If the result of the division is an integer, then the function returns true, indicating that x can be simplified. If the result is not an integer, or if n is not a factor of x, then the function returns false. The function uses regular expressions to extract the numerator and denominator of x and n, and then checks if the denominators are the same. If they are, it performs the division and checks if the result is an integer."   prob = '[-49.8421993906386, -102.09876477818216, -84.70133873636132, -97.7919174549902, -84.94033799651015, -63.74440399982029, -88.03840506875133, -47.14630304358593, -83.86646899584139, -106.61991752329209, -103.11405387376982]'     >
+                <td>function_7 (s09)</td>
+                <td>30.77</td>
+                <td>-68.75271757648929</td>
+                <td>-255.78823312741497</td>
+                <td>-324.5409507039043</td>
+                <td>0.06321593427314935</td>
+                <td>-0.05465728117349757</td>
+            </tr>
+            <!-- 第八行 -->
+            <tr data-code="def simplify(x, n):&#10;    x_num, x_den = x.split('/')&#10;    n_num, n_den = n.split('/')&#10;    x_num = int(x_num)&#10;    x_den = int(x_den)&#10;    n_num = int(n_num)&#10;    n_den = int(n_den)&#10;    result_num = x_num * n_num&#10;    result_den = x_den * n_den&#10;    return result_num // result_den == 1" data-description="This function takes two fractions represented as strings and simplifies them by finding the greatest common divisor and reducing both fractions to their simplest form. It returns true if the resulting fractions are equal, and false otherwise. The function first splits the input strings into numerator and denominator parts, converts them to integers, and then calculates the product of the numerators and denominators. Finally, it checks if the result is an integer and returns the result of that comparison."     prob ='[-23.321746504152088, -77.2088653091032, -74.48963751535484, -76.2221068118406, -55.717400548356636, -57.23011232435101, -75.0506858464505, -51.28559164948456, -60.405668742856506, -80.31233020008767, -85.05119018912978]'        >
+                <td>function_8 (s45)</td>
+                <td>61.54</td>
+                <td>-33.743620831155</td>
+                <td>-258.271129167827</td>
+                <td>-292.014749998983</td>
+                <td>0.99999999999927</td>
+                <td>-0.032558841784550</td>
+            </tr>
+            <!-- 第九行 -->
+            <tr data-code="def simplify(x, n):&#10;    # Check if x and n are valid fractions&#10;    if not (x.split('/')[1] and n.split('/')[1]):&#10;        # Handle invalid fractions&#10;        return False&#10;&#10;    # Check if x and n have the same denominator&#10;    x_denom = int(x.split('/')[1])&#10;    n_denom = int(n.split('/')[1])&#10;    if x_denom != n_denom:&#10;        # Handle different denominators&#10;        return False&#10;&#10;    # Check if x * n evaluates to a whole number&#10;    result = int(x.split('/')[0]) * int(n.split('/')[0])&#10;    return result % x_denom == 0 and result % n_denom == 0" data-description="This function takes two fractions represented as strings in the format a/b, where a and b are integers, and returns true if the two fractions are equal, and false otherwise. It first checks if the denominators of the two fractions are the same, and if not, returns false. Then it checks if the numerators of the two fractions are equal, and if not, returns false. Finally, it checks if the product of the numerators of the two fractions is equal to the product of the denominators, and if so, returns true. This function simplifies the process of comparing two fractions."  prob = '[-40.46443608685422, -92.45351850898987, -81.00482572245073, -91.13880680374177, -74.89651568053523, -76.7544576799628, -85.37621174976721, -49.84275744876504, -73.25876063040414, -92.07027644300433, -107.62466226445304]'          >
+                <td>function_9 (s53)</td>
+                <td>69.23</td>
+                <td>-55.433813047795</td>
+                <td>-263.567337738844</td>
+                <td>-319.00115078663</td>
+                <td>0.99991547015538</td>
+                <td>-0.046785902602076</td>
+            </tr>
+            <!-- 第十行 -->
+            <tr data-code="def simplify(x, n):&#10;    # Remove any common factors between the numerator and denominator of x and n&#10;    x_numerator, x_denominator = x.split('/')&#10;    n_numerator, n_denominator = n.split('/')&#10;    gcd = Fraction(x_numerator, x_denominator).gcd(Fraction(n_numerator, n_denominator))&#10;    x_numerator = x_numerator // gcd&#10;    x_denominator = x_denominator // gcd&#10;    n_numerator = n_numerator // gcd&#10;    n_denominator = n_denominator // gcd&#10;&#10;    # Check if x * n evaluates to a whole number&#10;    result = x_numerator * n_denominator == x_denominator * n_numerator&#10;&#10;    return result"data-description="Create a function that takes two fractions. It simplifies both fractions by removing any common factors between the numerators and denominators. It returns True if the product of the first fraction's numerator and the second fraction's denominator equals the product of the first fraction's denominator and the second fraction's numerator. Otherwise, it returns False."    prob = '[-35.49126896084272, -60.90345474238529, -70.67844479278847, -77.66393348985912, -58.98746455386731, -69.04279661772898, -61.59204404177194, -51.11102000432538, -59.57526147616932, -74.84504792476127, -83.52944732537253]'        >
+                <td>function_10 (s52)</td>
+                <td>0.0</td>
+                <td>-45.1628033278063</td>
+                <td>-257.901127281219</td>
+                <td>-303.063930609026</td>
+                <td>0.99999983528959</td>
+                <td>-0.050455289415438</td>
+        </tbody>
+    </table>
+
+    <!-- 用于显示代码的部分 -->
+    <div id="codeDisplay">
+        <pre id="codeBlock">Hover over a row to see the program code here.</pre>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div>
+        <h3>Heatmap</h3>
+        <table id="heatmap" border="1" cellspacing="0" cellpadding="5"></table>
+        <p id="info">Click on a cell to see details here.</p>
+    </div>
+
+    <!-- 显示函数和描述的部分 -->
+    <div id="infoDisplay"></div>
+
+    <script>
+        // 定义矩阵数据
+        const matrix = [
+            [-0.13202209, -0.1137711,  -0.1210194,  -0.1274046,  -0.12002595, -0.12184083, -0.11307554, -0.1187376,  -0.12443809, -0.11874758],
+            [-0.12591024, -0.1024221,  -0.10153575, -0.1142322,  -0.10573537, -0.10840457, -0.1169201,  -0.11212181, -0.10645375, -0.10640162],
+            [-0.06610005, -0.09175989, -0.08774352, -0.06936866, -0.09184866, -0.07667466, -0.09196852, -0.08433067, -0.08470345, -0.0846937 ],
+            [-0.0733834,  -0.06557744, -0.05979291, -0.06370996, -0.06192696, -0.08282424, -0.05170094, -0.07159839, -0.05762933, -0.07266072],
+            [-0.09523207, -0.09312381, -0.10651803, -0.09135564, -0.10673437, -0.09051728, -0.09654349, -0.10477618, -0.09871392, -0.08756081],
+            [-0.09256697, -0.09052111, -0.07953657, -0.09376119, -0.07380897, -0.10004926, -0.06990253, -0.07989737, -0.08874525, -0.09815299],
+            [-0.07748904, -0.10718213, -0.09936005, -0.08750915, -0.10132627, -0.08965721, -0.09314613, -0.07778551, -0.08659706, -0.08385808],
+            [-0.10393174, -0.10011239, -0.09612418, -0.11062756, -0.09445035, -0.09453609, -0.10723925, -0.10641156, -0.10537676, -0.11040902],
+            [-0.10415522, -0.06933303, -0.09961821, -0.09211603, -0.09412121, -0.0900334,  -0.09288404, -0.10399291, -0.09365962, -0.10047827],
+            [-0.1011241,  -0.11031472, -0.11697017, -0.10513489, -0.11891077, -0.0989687,  -0.11196217, -0.10778915, -0.10689686, -0.0865819 ],
+            [-0.02808506, -0.05588228, -0.03178122, -0.04478013, -0.03111112, -0.04649376, -0.05465728, -0.03255884, -0.0467859,  -0.05045529]
+        ];
+
+    const xLabels = ['f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10'];
+    const yLabels = ['d10', 'd9', 'd8', 'd7', 'd6', 'd5', 'd4', 'd3', 'd2', 'd1', 'd0'];  // 倒序排列的纵坐标
+
+
+    const minValue = Math.min(...matrix.flat());
+    const maxValue = Math.max(...matrix.flat());
+
+    const table = document.getElementById('heatmap');
+    const tbody = document.querySelector('#programTable tbody');
+
+    function getColor(value) {
+        const ratio = (value - minValue) / (maxValue - minValue); 
+        const red = Math.round(255 * ratio);  
+        return `rgb(255, ${255 - red}, ${255 - red})`; 
+    }
+
+    // 添加横坐标
+    const headerRow = document.createElement('tr');
+    const emptyHeaderCell = document.createElement('td');  // 空单元格，用于左上角
+    headerRow.appendChild(emptyHeaderCell);
+    xLabels.forEach(label => {
+        const headerCell = document.createElement('td');
+        headerCell.textContent = label;
+        headerRow.appendChild(headerCell);
+    });
+    table.appendChild(headerRow);
+
+    // 动态生成表格
+    for (let i = 0; i < matrix.length; i++) {
+        const row = document.createElement('tr');
+
+        // 添加纵坐标（倒序显示）
+        const yLabelCell = document.createElement('td');
+        yLabelCell.textContent = yLabels[i];
+        row.appendChild(yLabelCell);
+
+        for (let j = 0; j < matrix[i].length; j++) {
+            const cell = document.createElement('td');
+            const value = matrix[i][j];
+            cell.style.backgroundColor = getColor(value);
+
+            cell.addEventListener('click', () => {
+                let description, code;
+
+                const x = i;
+                const y = j;
+
+                if (x === matrix.length - 1) {
+                    description = 'Your task is to implement a function that will simplify the expression x * n. The function returns True if x * n evaluates to a whole number and False otherwise. Both x and n, are string representation of a fraction, and have the following format, <numerator>/<denominator>; where both numerator and denominator are positive whole numbers.';
+                    const codeRow = tbody.rows[y];
+                    code = codeRow.getAttribute('data-code').replace(/&#10;/g, '\n');
+                } else if (x >= 0 && y < tbody.rows.length) {
+                    const descriptionRow = tbody.rows[9 - x];
+                    description = descriptionRow.getAttribute('data-description');
+                    const codeRow = tbody.rows[y];
+                    code = codeRow.getAttribute('data-code').replace(/&#10;/g, '\n');
+                } else {
+                    description = "Invalid row or column index.";
+                    code = "Code not available.";
+                }
+
+                document.getElementById('infoDisplay').textContent = `RSA_score: ${value.toFixed(6)}\n\nDescription: ${description}\n\nFunction Code:\n${code}`;
+            });
+
+            row.appendChild(cell);
+        }
+        table.appendChild(row);
+    }
+
+        
+        
+        
+        
+    </script>
+</body>
+</html>

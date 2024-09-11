@@ -1,0 +1,123 @@
+/* 基本页面样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+/* 代码显示区域样式 */
+#codeDisplay {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+pre {
+    white-space: pre-wrap; /* 保持换行符 */
+    word-wrap: break-word; /* 长字符串换行 */
+    background-color: #333;
+    color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px; /* 添加字体大小 */
+    line-height: 1.6; /* 设置行高，提升可读性 */
+    font-family: 'Courier New', Courier, monospace; /* 等宽字体 */
+}
+
+
+/* 高亮样式 */
+.highlight {
+    background-color: rgb(112, 232, 130); /* 或者你喜欢的颜色 */
+}
+
+/* 选中行高亮 */
+.selected {
+    background-color: lightblue;
+}
+
+#descriptionBlock {
+    font-size: 1.5em; /* 设置字体大小，这里是 1.5 倍默认大小，您可以根据需要调整 */
+    font-weight: bold; /* 可选：设置加粗字体 */
+    margin-top: 10px; /* 可选：增加描述与代码之间的间距 */
+    color: #333; /* 可选：设置字体颜色 */
+}
+
+#heatmap {
+    table-layout: fixed;  /* 确保表格布局不会因内容而改变 */
+    width: auto;          /* 根据内容自动调整宽度，避免压缩 */
+}
+
+#heatmap td {
+    width: 50px;         /* 设置宽度，保持单元格为正方形 */
+    height: 50px;        /* 设置高度，保持单元格为正方形 */
+    text-align: center;  /* 居中对齐内容 */
+    padding: 0;          /* 移除内边距，确保单元格紧凑 */
+    border: 1px solid #ddd; /* 添加边框 */
+}
+
+#info {
+    text-align: center;  /* 居中文本 */
+    margin-top: 20px;    /* 调整顶部间距 */
+    font-size: 18px;     /* 根据需要调整字体大小 */
+    font-weight: bold;   /* 增加粗体效果以突出显示 */
+    color: #333;         /* 设定文本颜色 */
+}
+
+#codeDisplay, #infoDisplay {
+    font-family: monospace;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    font-size: 16px;
+    max-width: 90%;
+    margin: 20px auto;
+    text-align: left;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+#chartContainer {
+    display: flex;
+    justify-content: center;  /* 水平居中 */
+    align-items: center;      /* 垂直居中 */
+    height: 300px;            /* 容器高度可以根据需要调整 */
+}
+
+#probChart {
+    width: 400px;  /* 图表宽度 */
+    height: 250px; /* 图表高度 */
+}
